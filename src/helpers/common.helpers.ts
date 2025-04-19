@@ -1,5 +1,5 @@
-import { format as formatTz, toZonedTime } from 'date-fns-tz'
 import { IMAGE_URLS, TIME_FORMAT } from '../constants/weather.constants'
+import { format as formatTz, toZonedTime } from 'date-fns-tz'
 
 export const formatLocalTime = (
   timeZone: string,

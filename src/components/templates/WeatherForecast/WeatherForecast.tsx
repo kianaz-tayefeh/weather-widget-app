@@ -1,17 +1,17 @@
-import { Card } from '@/components/uikit/Card/Card'
-import { Text } from '@/components/uikit/Text/Text'
 import Image from 'next/image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCloudRain } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './WeatherForecast.module.scss'
-import { SizesEnum } from '@/enums/sizes'
+import { TemperatureRange } from '@/components/templates/TemperatureRange/TemperatureRange'
+import { Card } from '@/components/uikit/Card/Card'
+import { Chip } from '@/components/uikit/Chip/Chip'
+import { Text } from '@/components/uikit/Text/Text'
+import { FORCAST_DAYS } from '@/constants/weather.constants'
 import { FontsEnum } from '@/enums/fonts'
+import { SizesEnum } from '@/enums/sizes'
 import { getForecastDayLabel, getWeatherBackground } from '@/helpers/common.helpers'
 import { IForecast } from '@/types/weather.type'
-import { FORCAST_DAYS } from '@/constants/weather.constants'
-import { TemperatureRange } from '../TemperatureRange/TemperatureRange'
-import { Chip } from '@/components/uikit/Chip/Chip'
+import { faCloudRain } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 type ForecastProps = {
   forecast: IForecast

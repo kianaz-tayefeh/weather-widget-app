@@ -1,5 +1,6 @@
-import { formatLocalTime } from '@/helpers/common.helpers'
 import { useEffect, useState } from 'react'
+
+import { formatLocalTime } from '@/helpers/common.helpers'
 
 type ClockProps = {
   timezone: string

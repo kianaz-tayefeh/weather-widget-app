@@ -1,17 +1,17 @@
+import Image from 'next/image'
+
+import styles from './WeatherWidget.module.scss'
+import { Clock } from '@/components/templates/Clock/Clock'
+import { TemperatureRange } from '@/components/templates/TemperatureRange/TemperatureRange'
 import { Card } from '@/components/uikit/Card/Card'
 import { Chip } from '@/components/uikit/Chip/Chip'
 import { Text } from '@/components/uikit/Text/Text'
-import { IForecast, IWeather } from '@/types/weather.type'
-import { getWeatherBackground, roundNumber } from '@/helpers/common.helpers'
-import Image from 'next/image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCloudRain, faDroplet, faLocationDot, faWind } from '@fortawesome/free-solid-svg-icons'
-
-import { Clock } from '../Clock/Clock'
-import styles from './WeatherWidget.module.scss'
-import { SizesEnum } from '@/enums/sizes'
 import { FontsEnum } from '@/enums/fonts'
-import { TemperatureRange } from '../TemperatureRange/TemperatureRange'
+import { SizesEnum } from '@/enums/sizes'
+import { getWeatherBackground, roundNumber } from '@/helpers/common.helpers'
+import { IForecast, IWeather } from '@/types/weather.type'
+import { faCloudRain, faDroplet, faLocationDot, faWind } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 type WeatherWidgetProps = {
   weather: IWeather
@@ -49,7 +49,6 @@ export const WeatherWidget = (props: WeatherWidgetProps) => {
           <Text>
             <Clock timezone={weather.location.tz_id} />
           </Text>
-
           <Card>
             <div className={styles.conditions}>
               <div className={styles.condition}>

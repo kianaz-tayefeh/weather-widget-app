@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './TemperatureRange.module.scss'
-import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons'
-import { roundNumber } from '@/helpers/common.helpers'
 import { Text } from '@/components/uikit/Text/Text'
 import { FontsEnum } from '@/enums/fonts'
+import { roundNumber } from '@/helpers/common.helpers'
+import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 type TemperatureRangeProps = {
   maxtemp_c: number

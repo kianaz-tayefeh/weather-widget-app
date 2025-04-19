@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react'
-import { cn } from '@/helpers/common.helpers'
+
 import styles from './Text.module.scss'
-import { FontsEnum } from '@/enums/fonts'
 import { ColorsEnum } from '@/enums/colors'
+import { FontsEnum } from '@/enums/fonts'
+import { cn } from '@/helpers/common.helpers'
 
 type TextProps = {
   children: ReactNode

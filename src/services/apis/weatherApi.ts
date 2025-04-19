@@ -1,7 +1,7 @@
-import { IForecast, IWeather } from '@/types/weather.type'
 import { weatherClient } from '../clients/weatherClient'
-import { AxiosResponse } from 'axios'
 import { FORCAST_DAYS } from '@/constants/weather.constants'
+import { IForecast, IWeather } from '@/types/weather.type'
+import { AxiosResponse } from 'axios'
 
 const WEATHER_API_SEGMENTS = {
   // We can easily add more segments for other weather data

@@ -1,4 +1,4 @@
-import { IWeather } from '@/types/weather.type'
+import { IForecast, IWeather } from '@/types/weather.type'
 
 export const MOCK_WEATHER: IWeather = {
   location: {
@@ -45,5 +45,48 @@ export const MOCK_WEATHER: IWeather = {
     uv: 1,
     gust_mph: 2.2,
     gust_kph: 3.6,
+  },
+}
+
+export const MOCK_FORECAST_WEATHER: IForecast = {
+  location: {
+    name: 'Munich',
+    region: 'Bavaria',
+    country: 'Germany',
+    lat: 48.1351,
+    lon: 11.582,
+    tz_id: 'Europe/Berlin',
+    localtime_epoch: 1691008000,
+    localtime: '2023-08-31 12:00',
+  },
+  current: {
+    is_day: 1,
+    condition: {
+      text: 'Sunny',
+      icon: '//cdn.weatherapi.com/weather/64x64/day/113.png',
+      code: 1000,
+    },
+  },
+  forecast: {
+    forecastday: [
+      {
+        date: '2023-08-31',
+        date_epoch: 1691008000,
+        day: {
+          maxtemp_c: 30,
+          mintemp_c: 20,
+          avgtemp_c: 1,
+          maxwind_kph: 1,
+          totalprecip_mm: 1,
+          avghumidity: 1,
+          daily_chance_of_rain: 1,
+          condition: {
+            text: 'Sunny',
+            icon: '//cdn.weatherapi.com/weather/64x64/day/113.png',
+          },
+          uv: 1,
+        },
+      },
+    ],
   },
 }

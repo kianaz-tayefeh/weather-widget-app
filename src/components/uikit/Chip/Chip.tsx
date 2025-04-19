@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react'
-import { cn } from '@/helpers/common.helpers'
+
 import styles from './Chip.module.scss'
 import { SizesEnum } from '@/enums/sizes'
+import { cn } from '@/helpers/common.helpers'
 
 type ChipProps = {
   children: ReactNode
