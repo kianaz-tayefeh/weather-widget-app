@@ -2,14 +2,14 @@ import { Card } from '@/components/uikit/Card/Card'
 import { Text } from '@/components/uikit/Text/Text'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown, faArrowUp, faCloudRain } from '@fortawesome/free-solid-svg-icons'
+import { faCloudRain } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './WeatherForecast.module.scss'
 import { SizesEnum } from '@/enums/sizes'
 import { FontsEnum } from '@/enums/fonts'
-import { getForecastDayLabel, roundNumber } from '@/helpers/common.helpers'
+import { getForecastDayLabel } from '@/helpers/common.helpers'
 import { IForcast } from '@/types/weather.type'
-import { IMAGE_URLS } from '@/constants/weather.constants'
+import { FORCAST_DAYS, IMAGE_URLS } from '@/constants/weather.constants'
 import { TemperatureRange } from '../TemperatureRange/TemperatureRange'
 import { Chip } from '@/components/uikit/Chip/Chip'
 
@@ -28,7 +28,7 @@ export const WeatherForecast = (props: ForecastProps) => {
   return (
     <Card size={SizesEnum.lg} backgroundImage={IMAGE_URLS.cloudy}>
       <div className={styles.forecastWrapper}>
-        <Text font={FontsEnum.text20}>5-Day Forecast</Text>
+        <Text font={FontsEnum.text20}>{FORCAST_DAYS}-Day Forecast</Text>
         <div className={styles.forecastList}>
           {forecastday.map((item, index) => {
             const { date, day } = item

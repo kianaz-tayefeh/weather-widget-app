@@ -5,14 +5,7 @@ import { IForcast, IWeather } from '@/types/weather.type'
 import { roundNumber } from '@/helpers/common.helpers'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faArrowDown,
-  faArrowUp,
-  faCloudRain,
-  faDroplet,
-  faLocationDot,
-  faWind,
-} from '@fortawesome/free-solid-svg-icons'
+import { faCloudRain, faDroplet, faLocationDot, faWind } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './WeatherWidget.module.scss'
 import { Clock } from '../Clock/Clock'
