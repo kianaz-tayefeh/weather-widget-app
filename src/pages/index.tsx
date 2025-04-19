@@ -1,6 +1,6 @@
-import { Layout } from '@/components/layouts/Layout'
 import { WeatherForecast } from '@/components/templates/WeatherForecast/WeatherForecast'
 import { WeatherWidget } from '@/components/templates/WeatherWidget/WeatherWidget'
+import { Layout } from '@/components/templates/layout/Layout'
 import { NotFoundData } from '@/components/uikit/NotFoundData/NotFoundData'
 import { RELOAD_DELAY } from '@/constants/weather.constants'
 import { getErrorMessage } from '@/helpers/errors.helpers'

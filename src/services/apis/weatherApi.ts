@@ -1,5 +1,5 @@
-import { weatherClient } from '../clients/weatherClient'
 import { FORCAST_DAYS } from '@/constants/weather.constants'
+import { weatherClient } from '@/services/clients/weatherClient'
 import { IForecast, IWeather } from '@/types/weather.type'
 import { AxiosResponse } from 'axios'
 

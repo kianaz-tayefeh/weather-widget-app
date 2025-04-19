@@ -3,3 +3,4 @@ export enum FontsEnum {
   text20 = 'var(--font-text-20)',
   header72 = 'var(--font-header-72)',
 }
+// Later we can add more if needed

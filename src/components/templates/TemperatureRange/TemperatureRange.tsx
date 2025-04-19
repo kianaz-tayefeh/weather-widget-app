@@ -1,6 +1,7 @@
 import styles from './TemperatureRange.module.scss'
 import { Text } from '@/components/uikit/Text/Text'
 import { FontsEnum } from '@/enums/fonts'
+import { SizesEnum } from '@/enums/sizes'
 import { roundNumber } from '@/helpers/common.helpers'
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,12 +17,12 @@ export const TemperatureRange = (props: TemperatureRangeProps) => {
   return (
     <div className={styles.temperature_range}>
       <div className={styles.tempHigh}>
-        <FontAwesomeIcon icon={faArrowUp} size='lg' color='white' />
-        <Text font={FontsEnum.text16}>{roundNumber(maxtemp_c)}°</Text>
+        <FontAwesomeIcon icon={faArrowUp} size={SizesEnum.lg} />
+        <Text font={FontsEnum.text20}>{roundNumber(maxtemp_c)}°</Text>
       </div>
       <div className={styles.tempLow}>
-        <FontAwesomeIcon icon={faArrowDown} size='lg' color='white' />
-        <Text font={FontsEnum.text16}>{roundNumber(mintemp_c)}°</Text>
+        <FontAwesomeIcon icon={faArrowDown} size={SizesEnum.lg} />
+        <Text font={FontsEnum.text20}>{roundNumber(mintemp_c)}°</Text>
       </div>
     </div>
   )

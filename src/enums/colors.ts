@@ -1,4 +1,4 @@
-// in this project we have no usecase for it but I add it as its always required for the projects
+// in this project we have no usecase for most of colors but I just add them as example
 export enum ColorsEnum {
   white = 'var(--white)',
   primary = 'var(--primary)',

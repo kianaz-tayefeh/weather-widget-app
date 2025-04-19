@@ -31,7 +31,7 @@ export const WeatherForecast = (props: ForecastProps) => {
   return (
     <Card size={SizesEnum.lg} backgroundImage={backgroundImage}>
       <div className={styles.forecastWrapper}>
-        <Text font={FontsEnum.text20}>{FORCAST_DAYS}-Day Forecast</Text>
+        <Text font={FontsEnum.text20}>{forecastday.length} Day(s) Forecast</Text>
         <div className={styles.forecastList}>
           {forecastday.map((item, index) => {
             const { date, day } = item

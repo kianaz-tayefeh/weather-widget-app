@@ -5,6 +5,7 @@ import { formatLocalTime } from '@/helpers/common.helpers'
 type ClockProps = {
   timezone: string
 }
+
 export const Clock = (props: ClockProps) => {
   const { timezone } = props
 
