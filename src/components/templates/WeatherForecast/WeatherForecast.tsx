@@ -5,7 +5,6 @@ import { TemperatureRange } from '@/components/templates/TemperatureRange/Temper
 import { Card } from '@/components/uikit/Card/Card'
 import { Chip } from '@/components/uikit/Chip/Chip'
 import { Text } from '@/components/uikit/Text/Text'
-import { FORCAST_DAYS } from '@/constants/weather.constants'
 import { FontsEnum } from '@/enums/fonts'
 import { SizesEnum } from '@/enums/sizes'
 import { getForecastDayLabel, getWeatherBackground } from '@/helpers/common.helpers'
