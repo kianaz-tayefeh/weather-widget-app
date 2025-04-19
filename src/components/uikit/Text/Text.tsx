@@ -1,0 +1,21 @@
+import React, { ReactNode } from 'react'
+import { cn } from '@/helpers/common.helpers'
+import styles from './Text.module.scss'
+import { FontsEnum } from '@/enums/fonts'
+import { ColorsEnum } from '@/enums/colors'
+
+type TextProps = {
+  children: ReactNode
+  font?: FontsEnum
+  color?: ColorsEnum
+}
+
+export const Text = (props: TextProps) => {
+  const { children, font = FontsEnum.text16, color = ColorsEnum.white } = props
+
+  return (
+    <div className={cn(styles.text)} style={{ font, color }}>
+      {children}
+    </div>
+  )
+}

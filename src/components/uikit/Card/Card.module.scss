@@ -1,0 +1,38 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #ffffff33;
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Rounded */
+.rounded_none {
+  border-radius: 0;
+}
+.rounded_sm {
+  border-radius: 8px;
+}
+.rounded_md {
+  border-radius: 24px;
+}
+.rounded_lg {
+  border-radius: 36px;
+}
+
+/* Padding */
+.padding_none {
+  padding: 0;
+}
+.padding_sm {
+  padding: 6px 8px;
+}
+.padding_md {
+  padding: 12px 16px;
+}
+.padding_lg {
+  padding: 18px 24px;
+}

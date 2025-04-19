@@ -1,0 +1,13 @@
+.temperature_range {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  .tempHigh,
+  .tempLow {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+  }
+}

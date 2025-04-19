@@ -1,0 +1,29 @@
+.forecastWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .forecastList {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    .forecastItem {
+      min-width: 100px;
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      text-align: center;
+
+      .rainChance {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+    }
+  }
+}
