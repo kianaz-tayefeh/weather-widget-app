@@ -1,4 +1,4 @@
-import { IForcast, IWeather } from '@/types/weather.type'
+import { IForecast, IWeather } from '@/types/weather.type'
 import { weatherClient } from '../clients/weatherClient'
 import { AxiosResponse } from 'axios'
 import { FORCAST_DAYS } from '@/constants/weather.constants'
@@ -17,7 +17,7 @@ export const getCurrentWeather = async (city: string): Promise<AxiosResponse<IWe
   return response.data
 }
 
-export const getForecastWeather = async (city: string): Promise<IForcast> => {
+export const getForecastWeather = async (city: string): Promise<IForecast> => {
   const response = await weatherClient.get(WEATHER_API_SEGMENTS.forecast, {
     params: { days: FORCAST_DAYS, q: city },
   })

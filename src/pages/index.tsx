@@ -1,22 +1,25 @@
-import { IForcast, IWeather } from '@/types/weather.type'
+import { IForecast, IWeather } from '@/types/weather.type'
 import { WeatherWidget } from '@/components/templates/WeatherWidget/WeatherWidget'
-import { DEFAULT_CITY } from '@/constants/weather.constants'
+import { RELOAD_DELAY } from '@/constants/weather.constants'
 import { getCurrentWeather, getForecastWeather } from '@/services/apis/weatherApi'
 import { NotFoundData } from '@/components/uikit/NotFoundData/NotFoundData'
 import { getErrorMessage } from '@/helpers/errors.helpers'
 import { Layout } from '@/components/layouts/Layout'
 import { WeatherForecast } from '@/components/templates/WeatherForecast/WeatherForecast'
 import { getCityByIpApi } from '@/services/apis/ipApi'
+import { useReloadPage } from '@/hooks/useReloadPage'
 
 type HomePageProps = {
   weather: IWeather | null
-  forecast: IForcast | null
+  forecast: IForecast | null
   errorMessage?: string
 }
 
 export default function HomePage(props: HomePageProps) {
   const { weather, forecast, errorMessage } = props
   console.log('HomePage props', props)
+
+  useReloadPage(RELOAD_DELAY)
 
   if (!weather || !forecast) return <NotFoundData errorMessage={errorMessage} />
 

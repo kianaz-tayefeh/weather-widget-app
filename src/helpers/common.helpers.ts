@@ -1,5 +1,5 @@
 import { format as formatTz, toZonedTime } from 'date-fns-tz'
-import { TIME_FORMAT } from '../constants/weather.constants'
+import { IMAGE_URLS, TIME_FORMAT } from '../constants/weather.constants'
 
 export const formatLocalTime = (
   timeZone: string,
@@ -25,4 +25,12 @@ export const roundNumber = (num: number, digits = 0): number => {
   const factor = 10 ** digits
 
   return Math.round(num * factor) / factor
+}
+
+export const getWeatherBackground = (conditionCode: number, isDay: number): string => {
+  if (!isDay) return IMAGE_URLS.night
+
+  if (conditionCode === 1000) return IMAGE_URLS.sunny
+
+  return IMAGE_URLS.cloudy
 }

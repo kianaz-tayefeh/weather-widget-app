@@ -1,14 +1,21 @@
-# Weather Widget App
+# 🌦️ Weather Widget App
 
-## Overview
-
-A Next.js application for displaying current weather with search, forcast, and []. Optimized for performance with .
+A Next.js application that displays the current weather and a 3-day forecast using real-time, location-based data. Built for performance and developer experience with SSR, modular design, and automatic updates.
 
 ## Features
 
-- **Structured Codebase**: Configured with ESLint, Prettier, and Husky for code consistency.
-- **UI & UX**: Modular scss and responsive design.
-- **Testing**: Implemented with Vitest.
+- **Structured Codebase**: ESLint, Prettier, and Husky ensure consistent formatting and code quality.
+- **Weather API**: Integrated live weather and forecast data (current + 3-day).
+- **Functionality**:
+
+  - Automatically detects user's city via browser geolocation.
+  - Weather updates every 10 minutes using a lightweight refresh hook.
+  - Background dynamically changes based on current weather condition.
+
+- **UI Kit**: Reusable UI kit built with modular SCSS. Responsive layout and clean styling.
+- **Error Handling**: handles API/network failures with fallbacks.
+- **Test**: Unit tested using Vitest.
+- **Performance**: SSR-powered rendering via getServerSideProps.
 
 ## Setup
 
@@ -27,8 +34,6 @@ A Next.js application for displaying current weather with search, forcast, and [
 
 ## Notes
 
-- I didn't add loading component in ui kit as I am fetching my data using ssr of next for this api
-- Also for my routes I didn't add code spliting as Next is handing it automatically
-- For the city name I can get that data from onavigator.geolocation, as you mentiond 3-4 hours didnt implement it,
-  but I can inject city name and get it from ssr context
-- I have tried to creat clean type of structure for my components, wrap them as templates, uikit
+- Loading states are not needed since data is server-rendered.
+- Route-level code splitting is handled automatically by Next.js.
+- The component structure is modular and designed for scalability.

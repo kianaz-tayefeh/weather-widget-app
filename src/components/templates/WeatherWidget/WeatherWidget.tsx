@@ -1,33 +1,34 @@
 import { Card } from '@/components/uikit/Card/Card'
 import { Chip } from '@/components/uikit/Chip/Chip'
 import { Text } from '@/components/uikit/Text/Text'
-import { IForcast, IWeather } from '@/types/weather.type'
-import { roundNumber } from '@/helpers/common.helpers'
+import { IForecast, IWeather } from '@/types/weather.type'
+import { getWeatherBackground, roundNumber } from '@/helpers/common.helpers'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloudRain, faDroplet, faLocationDot, faWind } from '@fortawesome/free-solid-svg-icons'
 
-import styles from './WeatherWidget.module.scss'
 import { Clock } from '../Clock/Clock'
+import styles from './WeatherWidget.module.scss'
 import { SizesEnum } from '@/enums/sizes'
 import { FontsEnum } from '@/enums/fonts'
-import { IMAGE_URLS } from '@/constants/weather.constants'
 import { TemperatureRange } from '../TemperatureRange/TemperatureRange'
 
 type WeatherWidgetProps = {
   weather: IWeather
-  forecast: IForcast
+  forecast: IForecast
 }
 
 export const WeatherWidget = (props: WeatherWidgetProps) => {
   const { weather, forecast } = props
 
-  const { temp_c, humidity, wind_kph, precip_mm, condition } = weather?.current || {}
+  const { temp_c, humidity, wind_kph, precip_mm, condition, is_day } = weather?.current || {}
 
   const { day } = forecast.forecast.forecastday[0]
 
+  const backgroundImage = getWeatherBackground(condition.code, is_day)
+
   return (
-    <Card size={SizesEnum.lg} backgroundImage={IMAGE_URLS.cloudy}>
+    <Card size={SizesEnum.lg} backgroundImage={backgroundImage}>
       <div className={styles.wrapper}>
         <div className={styles.column_1}>
           <div className={styles.location}>

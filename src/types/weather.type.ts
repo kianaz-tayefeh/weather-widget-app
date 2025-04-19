@@ -64,7 +64,7 @@ export interface IForecastDay {
   }
 }
 
-export interface IForcast {
+export interface IForecast {
   location: {
     name: string
     region: string
@@ -77,5 +77,13 @@ export interface IForcast {
   }
   forecast: {
     forecastday: IForecastDay[]
+  }
+  current: {
+    is_day: number
+    condition: {
+      text: string
+      icon: string
+      code: number
+    }
   }
 }

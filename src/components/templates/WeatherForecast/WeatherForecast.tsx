@@ -7,14 +7,14 @@ import { faCloudRain } from '@fortawesome/free-solid-svg-icons'
 import styles from './WeatherForecast.module.scss'
 import { SizesEnum } from '@/enums/sizes'
 import { FontsEnum } from '@/enums/fonts'
-import { getForecastDayLabel } from '@/helpers/common.helpers'
-import { IForcast } from '@/types/weather.type'
-import { FORCAST_DAYS, IMAGE_URLS } from '@/constants/weather.constants'
+import { getForecastDayLabel, getWeatherBackground } from '@/helpers/common.helpers'
+import { IForecast } from '@/types/weather.type'
+import { FORCAST_DAYS } from '@/constants/weather.constants'
 import { TemperatureRange } from '../TemperatureRange/TemperatureRange'
 import { Chip } from '@/components/uikit/Chip/Chip'
 
 type ForecastProps = {
-  forecast: IForcast
+  forecast: IForecast
 }
 
 export const WeatherForecast = (props: ForecastProps) => {
@@ -22,11 +22,14 @@ export const WeatherForecast = (props: ForecastProps) => {
     forecast: {
       forecast: { forecastday },
       location,
+      current: { condition, is_day },
     },
   } = props
 
+  const backgroundImage = getWeatherBackground(condition.code, is_day)
+
   return (
-    <Card size={SizesEnum.lg} backgroundImage={IMAGE_URLS.cloudy}>
+    <Card size={SizesEnum.lg} backgroundImage={backgroundImage}>
       <div className={styles.forecastWrapper}>
         <Text font={FontsEnum.text20}>{FORCAST_DAYS}-Day Forecast</Text>
         <div className={styles.forecastList}>
